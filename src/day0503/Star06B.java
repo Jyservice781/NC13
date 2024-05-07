@@ -29,7 +29,6 @@ public class Star06B {
             //별 담당for
             for (int j = 1; j <= starWidth; j++) {
                 stars += "*";
-
             }
 
             System.out.println(stars);
