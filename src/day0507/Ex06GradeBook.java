@@ -55,8 +55,6 @@ public class Ex06GradeBook {
             }else if(userChoice == 2){
                 //2. 현재 입력된 학생들만 출력
 
-
-
             }else{
                 //userChoice == 3
                 //종료
