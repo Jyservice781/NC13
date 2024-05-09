@@ -71,7 +71,7 @@ public class ArrayUtil {
         return temp;
     }
 
-    // 1-H. 현재 배열의 특정 인덱스에 새로운 값을 추가하는
+    // 1-H. 현재 배열의 특정 인덱스에 새로운 값을 추가하는sT
     //    // add() - 중간에도 넣겠다.
     public static int[] add(int[] array, int index, int element) {
         // 만약 index가 불가능한 index일 경우.
@@ -134,18 +134,126 @@ public class ArrayUtil {
         //indexOf를 먼저 실행
     }
 
+
+    // 2. String[]
+    // 2-A. size()
+    public static int size(String[] array) {
+        return array.length;
+    }
+
+    // 2-B. isEmpty()
+    // 현재 배열이 아무것도 없으면 true 있으면 false 가 리턴되는
+    public static boolean isEmpty(String[] array) {
+        return size(array) == 0;
+    }
+
+    // 2-C. get()
+    // 현재 배열에서 특정 값의 가장 먼저 등장하는 인덱스를 찾는
+    public static String get(String[] array, int index) {
+        return array[index];
+    }
+
+    // 2-D. indexOf()
+    // String 배열 안에서 String 을 찾을테니까
+    public static int indexOf(String[] array, String element) {
+        for (int i = 0; i < size(array); i++) {
+            if (element.equals(get(array, i))) {
+                //원하는 주소값을 출력하기 위해서 String 은 .equals 를 입력해줘야한다.
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    // 2- E. lastIndexOf()
+    public static int lastIndexOf(String[] array, String element) {
+        for (int i = size(array) - 1; i >= 0; i--) {
+            if (element.equals(get(array, i))) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
+    // 2-F. contains()
+    public static boolean contains(String[] array, String element) {
+        return indexOf(array, element) != -1;
+    }
+
+    // 2-G add()
+    public static String[] add(String[] array, String element) {
+        String[] temp = new String[size(array) + 1];
+        for (int i = 0; i < size(array); i++) {
+            temp[i] = get(array, i);
+        }
+        //마지막 인덱스 칸에 파라미터 넣기
+        temp[size(temp) - 1] = (element);
+        //특정 주소값을 가지고 가는 것이 아니라면 String[] 에서도 = 을 쓰기도 함.
+        return temp;
+    }
+
+    // 2-H. add()
+    public static String[] add(String[] array, int index, String element) {
+        if (index < 0 || index >= size(array)) {
+            return array;
+        }
+        String[] temp = new String[0];
+
+        for (int i = 0; i < size(array) + 1; i++) {
+            if (i < index) {
+                temp = add(temp, get(array, i));
+            } else if (i == index) {
+                temp = add(temp, element);
+            } else {
+                temp = add(temp, get(array, i - 1));
+            }
+        }
+        return temp;
+    }
+
+    // 2-I set()
+    public static String set(String[] array, int index, String element) {
+        String temp = get(array, index);
+        array[index] = (element);
+        return temp;
+    }
+
+    // 2-J. 해당 배열의 특정 인덱스를 삭제하는
+    // remove()
+    public static String[] remove(String[] array, int index) {
+        String[] temp = new String[0];
+        // 0인 배열을 temp 에 저장해둠.
+
+        for (int i = 0; i < size(array); i++) {
+            //인덱스를 제외한 값들은 모두 저장
+            if (i != index) {
+                temp = add(temp, get(array, i));
+                // index 랑 i 랑 같은때 false
+            }
+        }
+        return temp;
+    }
+
+    // 2-K. remove()
+    // 해당 배열의 특정엘리먼트가 있는 인덱스를 삭제하는
+    // int 배열이기때문에 오버로딩이 안됨.
+    public static String[] removeElement(String[] array, String element) {
+        return remove(array, indexOf(array, element));
+        //indexOf를 먼저 실행
+    }
+
+
     public static int[] solting(int[] array) {
         for (int i = 0; i < size(array) - 1; i++) {
             //인덱스를 제외한 값들은 모두 저장
             if (get(array, i) > get(array, i + 1)) {
                 int temp = get(array, i);
                 array[i] = get(array, i + 1);
-                array[i+1] = temp;
+                array[i + 1] = temp;
                 i = -1;
             }
         }
         return array;
-
     }
 
 }
