@@ -33,6 +33,16 @@ public class ScannerUtil {
         //올바른 값이 들어있는 temp 를 리턴해 줌.
         return temp;
     }
+    //Scanner 버그를 해결한 nextLine()
+    public static String nextLine(Scanner scanner, String message){
+        printMessage(message);
+        String temp = scanner.nextLine();
+        //스캐너 버그
+        if(temp.isEmpty()){
+            temp = scanner.nextLine();
+        }
+        return temp;
+    }
 
 
 }
