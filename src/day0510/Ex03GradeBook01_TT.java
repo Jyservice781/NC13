@@ -90,17 +90,11 @@ public class Ex03GradeBook01_TT {
             printOne(userChoice);
         }
     }
+
     // 목록 보기에서 사용자가 입력한 값이
     // 유효한 값인지 체크하여
-    // 유효하면 true, 유효하지 않으면 false 가 리턴되는 멧서드
-
+    // 유효하면 true, 유효하지 않으면 false 가 리턴되는 메서드
     public static boolean validate(int value) {
-    /*    if (value == 0) {
-            return false;
-        } else if () {
-            return true;
-        }*///if elseif 에 현혹되버림..;
-        //0이거나 학생 배열 번호 값이거나
         if (value == 0) {
             return true;
         }
