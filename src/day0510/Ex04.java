@@ -17,6 +17,7 @@ public class Ex04 {
     public static String[] name = new String[0];
     public static String[] title = new String[0];
     public static String[] content = new String[0];
+    public static String[] text = new String[0];
     public static int nextIdx = 1;
 
     //전역 상수도 필요할까?
@@ -68,7 +69,6 @@ public class Ex04 {
 
         message = "글의 내용을 입력해주세요.";//-> 내용
         content = ArrayUtil.add(content, ScannerUtil.nextLine(SCANNER, message));
-
     }
 
     public static void conform(String form) {
@@ -76,27 +76,48 @@ public class Ex04 {
         // 번호에 맞는 사람을 수정 첨가 해주어야 하기 때문에 이렇게 변경할 수 있겠음.
         String message;
         while (true) {
-            message = "1. 수정  2. 삭제";
+            message = "1. 수정  2. 삭제 3.뒤로";
             int userChoice = ScannerUtil.nextInt(SCANNER, message);
             if (userChoice == 1) {
                 // 수정 해주기 indexOf
-                message = "수정할 내용을 입력해주세요";
-                String text = ArrayUtil.add(text, ScannerUtil.nextLine(SCANNER, message));
+                message = "수정할 내용를 입력해주세요";
 
+                text = ArrayUtil.add(text, ScannerUtil.nextLine(SCANNER, message));
 
             } else if (userChoice == 2) {
                 // remove
+                message = "정말로 삭제 하십니까? \n Y/N";
+                String answer = ScannerUtil.nextLine(SCANNER, message);
+                if(answer.equalsIgnoreCase("Y")){
+                    //예스
+                    ArrayUtil.remove(idx)
+                }
 
+                //delete가 끝나고 메뉴로 나가야 함
+                menu();
+            }else if(userChoice == 3){
+                menu();
             }
 
         }
     }
+    //수정 메서드 따로 만들어서 호출하기
 
-    public static void delete() {
+    public static void delete(int id) {
+        int id = ScannerUtil.nextInt()
         //삭제 매서드 -> 한번 확인 문구  Y/N
         // 1. 삭제를 하고 리스트로 실행
         // 2. 삭제를 안하고 계속 진행
     }
+
+
+
+
+
+
+
+
+
 
 
 //method 종료
