@@ -222,8 +222,8 @@ public class ArrayUtil {
     // remove()
     public static String[] remove(String[] array, int index) {
         String[] temp = new String[0];
+        //길이를 변경하려면 무조건 new 키워드를 사용함.
         // 0인 배열을 temp 에 저장해둠.
-
         for (int i = 0; i < size(array); i++) {
             //인덱스를 제외한 값들은 모두 저장
             if (i != index) {
@@ -231,6 +231,7 @@ public class ArrayUtil {
                 // index 랑 i 랑 같은때 false
             }
         }
+        //새로만든 배열의 주소값을 덮어씌움.
         return temp;
     }
 
@@ -255,57 +256,4 @@ public class ArrayUtil {
         return array;
     }
 
-
-    // 학생들 가이드 북
-    //번호 가져와서 계산 메서드
-//    public static int[] idArray(int[] array){
-//        int[] idArray = new int[0];
-//        //만약 학생들의 번호가 초과하면 add()
-//
-//
-//
-//        //학생들의 출력을 원할때 return 을  해줘야함.
-//         return idArray;
-//    }
-//
-//    //이름 가져와서 계산 메서드
-//    public static String[] nameArray(String[] array,int index, String element){
-//        String[] nameArray = new String[0];
-//        if (index < 0 || index >= size(array)) {
-//            return array;
-//        }
-//        String[] temp = new String[0];
-//
-//        for (int i = 0; i < size(array) + 1; i++) {
-//            if (i < index) {
-//                temp = add(temp, get(array, i));
-//            } else if (i == index) {
-//                temp = add(temp, element);
-//            } else {
-//                temp = add(temp, get(array, i - 1));
-//            }
-//        }
-//        return temp;
-//    }
-
-//    // 국어 점수 가져와서 계산 메서드
-//    public static int[] koreanArray(int[] array, int index){
-//        int[] koreanArray = new int[0];
-//
-//
-//        return
-    //
-
-/*    // 수학 점수 계산 메서드
-    public static int[] mathArray(int[] arry, int index){
-        int[] mathArray = new int[0];
-
-        return
-    }
-    // 영어 점수 계산 메서드
-    public static int[] englishArray(int[] arry, int index){
-        int[] englishArray = new int[0];
-
-        return
-    }*/
 }

@@ -29,6 +29,12 @@ public class Ex01Lotto {
             }
         }
 
+        System.out.println("\n정렬후");
+        sort(computerNumbers);
+        for(int i = 0; i < ArrayUtil.size(computerNumbers); i++){
+            System.out.println(ArrayUtil.get(computerNumbers, i));
+        }
+
         //숫자를 순서대로 정렬하기
         //인덱스 값, 정렬을 위한 temp 값
         //computerNumbers 를 가져와야 함.
@@ -41,10 +47,22 @@ public class Ex01Lotto {
                 i = -1;
             }
         }*/
-        ArrayUtil.solting(computerNumbers);
+        //ArrayUtil.solting(computerNumbers);
         //출력만
-        for (int i = 0; i < ArrayUtil.size(computerNumbers); i++) {
+     /*   for (int i = 0; i < ArrayUtil.size(computerNumbers); i++) {
             System.out.println(ArrayUtil.get(computerNumbers, i));
+        }*/
+
+    }
+
+    public static void sort(int[] array) {
+        for (int i = 0; i < ArrayUtil.size(array) - 1; i++) {
+           if(ArrayUtil.get(array, i) > ArrayUtil.get(array, i + 1)){
+               int temp = ArrayUtil.get(array, i);
+               ArrayUtil.set(array, i, ArrayUtil.get(array, i + 1));
+               ArrayUtil.set(array, i + 1, temp);
+               i = -1;
+           }
         }
 
     }
