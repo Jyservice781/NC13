@@ -78,6 +78,7 @@ public class Ex03GradeBook01_TT {
 
         String message = "상세보기할 학생의 번호나 뒤로 가실려면 0을 입력해주세요.";
         int userChoice = ScannerUtil.nextInt(SCANNER, message);
+
         while (!validate(userChoice)) {
             System.out.println("잘못 입력하셨습니다.");
             userChoice = ScannerUtil.nextInt(SCANNER, message);

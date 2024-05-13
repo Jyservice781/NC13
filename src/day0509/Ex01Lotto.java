@@ -8,8 +8,6 @@ import java.util.Scanner;
 import util.ArrayUtil;
 import util.ScannerUtil;
 
-import static util.ArrayUtil.solting;
-
 public class Ex01Lotto {
     public static void main(String[] args) {
         Random random = new Random();
@@ -31,7 +29,7 @@ public class Ex01Lotto {
 
         System.out.println("\n정렬후");
         sort(computerNumbers);
-        for(int i = 0; i < ArrayUtil.size(computerNumbers); i++){
+        for (int i = 0; i < ArrayUtil.size(computerNumbers); i++) {
             System.out.println(ArrayUtil.get(computerNumbers, i));
         }
 
@@ -49,7 +47,7 @@ public class Ex01Lotto {
         }*/
         //ArrayUtil.solting(computerNumbers);
         //출력만
-     /*   for (int i = 0; i < ArrayUtil.size(computerNumbers); i++) {
+        /*for (int i = 0; i < ArrayUtil.size(computerNumbers); i++) {
             System.out.println(ArrayUtil.get(computerNumbers, i));
         }*/
 
@@ -57,12 +55,12 @@ public class Ex01Lotto {
 
     public static void sort(int[] array) {
         for (int i = 0; i < ArrayUtil.size(array) - 1; i++) {
-           if(ArrayUtil.get(array, i) > ArrayUtil.get(array, i + 1)){
-               int temp = ArrayUtil.get(array, i);
-               ArrayUtil.set(array, i, ArrayUtil.get(array, i + 1));
-               ArrayUtil.set(array, i + 1, temp);
-               i = -1;
-           }
+            if (ArrayUtil.get(array, i) > ArrayUtil.get(array, i + 1)) {
+                int temp = ArrayUtil.get(array, i);
+                ArrayUtil.set(array, i, ArrayUtil.get(array, i + 1));
+                ArrayUtil.set(array, i + 1, temp);
+                i = -1;
+            }
         }
 
     }

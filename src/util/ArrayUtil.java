@@ -71,7 +71,7 @@ public class ArrayUtil {
         return temp;
     }
 
-    // 1-H. 현재 배열의 특정 인덱스에 새로운 값을 추가하는sT
+    // 1-H. 현재 배열의 특정 인덱스에 새로운 값을 추가하는
     //    // add() - 중간에도 넣겠다.
     public static int[] add(int[] array, int index, int element) {
         // 만약 index가 불가능한 index일 경우.
@@ -110,6 +110,7 @@ public class ArrayUtil {
     }
 
     // 1-J. 해당 배열의 특정 인덱스를 삭제하는
+    // int 배열을 받아와야 하기 때문에 int[]을 이용함.
     // remove()
     public static int[] remove(int[] array, int index) {
         int[] temp = new int[0];
@@ -154,7 +155,7 @@ public class ArrayUtil {
     }
 
     // 2-D. indexOf()
-    // String 배열 안에서 String 을 찾을테니까
+    // String 배열 안에서 String 값을 찾을테니까
     public static int indexOf(String[] array, String element) {
         for (int i = 0; i < size(array); i++) {
             if (element.equals(get(array, i))) {
