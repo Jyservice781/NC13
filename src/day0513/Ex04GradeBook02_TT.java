@@ -8,7 +8,7 @@ import java.util.Scanner;
 
 public class Ex04GradeBook02_TT {
     public static ArrayList<Student> list = new ArrayList<>();
-    //ArrayList<타입> 이름 = new ArrayList<>();
+    // ArrayList<타입> 이름 = new ArrayList<>();
     public static int nextId = 1;
     public static String message = "";
 
@@ -20,7 +20,7 @@ public class Ex04GradeBook02_TT {
         showMenu();
     }
 
-    //showMenu()
+    // showMenu()
     public static void showMenu() {
        message = "1. 입력  2. 목록보기  3. 종료";
         while (true) {
@@ -39,7 +39,7 @@ public class Ex04GradeBook02_TT {
     }
 
     // 입력 메소드 만들기
-    //insert()
+    // insert()
     public static void insert() {
         // 학생의 정보를 임시로 저장할 Student 객체
         Student s = new Student();
@@ -66,7 +66,7 @@ public class Ex04GradeBook02_TT {
         list.add(s);
     }
 
-    //printList()
+    // printList()
     public static void printList() {
         if (list.isEmpty()) {
             System.out.println("아직 입력된 학생이 존재하지 않습니다.");
@@ -90,8 +90,8 @@ public class Ex04GradeBook02_TT {
         }
     }
 
-    //validate()
-    //유효성 검사로  validate 를 먼저 실행함.
+    // validate()
+    // 유효성 검사로  validate 를 먼저 실행함.
     public static boolean validate(int id) {
         if (id == 0) {
             return true;
@@ -102,7 +102,7 @@ public class Ex04GradeBook02_TT {
         return list.contains(s);
     }
 
-    //printOne()
+    // printOne()
     public static void printOne(int id) {
         Student s = selectOne(id);
         if (s == null) {
@@ -125,7 +125,7 @@ public class Ex04GradeBook02_TT {
             }
         }
     }
-    //update()
+    // update()
     public static void update(int id) {
         Student s = selectOne(id);
         message = "학생의 새로운 이름을 입력해주세요";

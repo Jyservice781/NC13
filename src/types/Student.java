@@ -61,7 +61,6 @@ public class Student {
         // 이 생성자를 실행시키는 객체의 id 안에
         // 파라미터 id 의 현재 값을 저장해라.
         this.id = id;
-
     }
 
     // 파라미터가 없는 생성자
@@ -93,6 +92,8 @@ public class Student {
         // 코드를 실행해라
         // 어떠한 클래스 객체가 특정 클래스 객체인지 확인할때에는?
         // instanceof 라는 키워드를 사용하게 된다.
+        // instanceof : 위의 문제점을 해결하고자 어떤 객체가 어떤 클래스의
+        //              인스턴스(객체)인지 확인하는데 사용되는 연산자이다.
         if (obj instanceof Student) {
             Student s = (Student) obj;
             // 강제적 형 변환
